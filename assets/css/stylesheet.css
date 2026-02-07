@@ -57,8 +57,7 @@ input {
     font-size: 18px;
     border-radius: 50px;
     margin: 30px auto;
-    width: 100%;
-    max-width: 1000px;
+    width: 600px;
 
 }
 #button {
@@ -87,5 +86,4 @@ input::placeholder {
 
 .todolist {
     display: flex;
-    
 }
