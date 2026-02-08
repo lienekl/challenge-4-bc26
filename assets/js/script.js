@@ -1,34 +1,97 @@
+
+
 let inputList = document.getElementById("inputlist");
 let ulEl = document.getElementById("list");
-// let toDoList = document.querySelector("ul");
-// let addButton = document.getElementById("button");
+let toDoList = document.querySelector("ul");
+let addButton = document.getElementById("button");
+
+addButton.addEventListener("click", addToList);
 
 
 function addToList() {
-    
+
 
     if (inputList.value === "") {
         alert("Please write down your task!");
     }
     else {
+        let newTask = inputList.value.trim();
         let li = document.createElement("li");
-        li.innerHTML = inputList.value.trim();
-        ulEl.appendChild(li);
-       
-        }
-        inputList.value = "";
-        document.getElementById("ul").style.display = "block";
+        li.innerHTML = newTask;
 
+        ulEl.appendChild(li);
 
     }
+    inputList.value = "";
 
-        toDoList.addEventListener("click", function (e) {
-        if (e.target.tagName === ulEl) {
-            e.target.classList.toggle("checked");
-        }
-        else if (e.target.tagName === "span") {
-            e.target.parentElement.remove();
-        }
-    }, false);
-    
+    document.getElementById("list-container").style.display = "block";
 
+
+    let li = document.getElementsByTagName("li");
+    let span = document.createElement("span");
+    let txt = document.createTextNode("X");
+    txt.className = "X";
+    li[i].appendChild(span);
+    span.appendChild(txt);
+
+
+    let close = document.getElementsByClassName("close");
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+
+}
+ulEl.addEventListener("click", function (ev) {
+    if (ev.target.tagName === li) {
+        ev.target.classList.toggle("checked");
+    }
+}, false);
+
+// // Create a "close" button and append it to each list item
+// let li = document.getElementsByTagName("li");
+
+// for (i = 0; i < li.length; i++) {
+//   var span = document.createElement("span");
+//   var txt = document.createTextNode("\u00D7");
+//   span.className = "close";
+//   span.appendChild(txt);
+//   li[i].appendChild(span);
+// }
+
+// let close = document.getElementsByClassName("close");
+
+// for (i = 0; i < close.length; i++) {
+//   close[i].onclick = function() {
+//     let div = this.parentElement;
+//     div.style.display = "none";
+//   }
+// }
+
+// let checkbox = li.querySelector("input");
+// let editBtn = li.querySelector(".edit-btn");
+// let taskSpan = li.querySelector("span");
+// let deleteBtn = li.querySelector(".delete-btn");
+
+
+// checkbox.addEventListener("click", function () {
+//     li.classList.toggle("completed", checkbox.checked);
+
+// });
+
+// editBtn.addEventListener("click", function () {
+//     let update = prompt("Edit task:", taskSpan.textContent);
+//     if (update !== null) {
+//         taskSpan.textContent = update;
+//         li.classList.remove("completed");
+//         checkbox.checked = false;
+//     }
+// });
+
+// deleteBtn.addEventListener("click", function () {
+//     if (confirm("Are you sure you want to delete this task?")) {
+//         li.remove();
+//     }
+// });

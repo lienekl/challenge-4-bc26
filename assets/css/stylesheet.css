@@ -17,7 +17,7 @@ h1 {
     align-items: center;
     justify-content: center;
     color: #5D6532;
-    font-size: 35px;
+    font-size: 30px;
     padding-top: 20px;
     margin: auto;
     text-align: center;
@@ -29,18 +29,18 @@ h1 {
     align-items: center;
     justify-content: center;
     color: #5D6532;
-    font-size: 18px;
-    padding-top: 50px;
+    font-size: 16px;
+    padding-top: 20px;
     margin: 30px auto;
     text-align: center;
 }
 
-h3 {
+h2 {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #5D6532;
-    font-size: 22px;
+    font-size: 23px;
     padding-top: 50px;
     margin: auto;
     text-align: center;
@@ -95,64 +95,78 @@ input::placeholder {
     margin: auto;
 }
 
-#id {
-    display: none;
-}
 
-#ul {
+#list-container {
     display: none;
-    justify-content: center;
     max-width: 600px;
-    border: #3E593B solid 1px;
+    border: none;
     margin: 20px auto;
 }
 
-/*
-.delete-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-
-}
-
-.delete-btn:hover {
-    color: darkred;
-    background-color: #999999;
-}
- 
-
 ul li:hover {
-  background: #dddddd;
+    background: #e6e5e4;
 }
-
 
 ul li.checked {
-  color: #ffffff;
-  text-decoration: line-through;
+    color: #000000;
+    text-decoration: line-through;
 }
-
 
 ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #ffffff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-} 
+    content: "✓ ";
+    position: absolute;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
 
 ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  list-style-type: none;
-  background: #eeeeee;
-  font-size: 18px;
-  transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #e6e5e4;
+    font-size: 18px;
+    transition: 0.2s;
 }
-  */
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.X {
+    color: #000000;
+    font-size: 16px;
+}
+
+
+/* .completed {
+  text-decoration: line-through;
+  color: gray;
+  border: 1px solid gray;
+}
+.edit-btn, .delete-btn {
+  color: #3E593B;
+  cursor: pointer;
+  margin: 3px 5px;
+  border: none;
+  padding: 3px 5px;
+  background: none;
+  text-align: right;
+  text-decoration: underline;
+}  */
