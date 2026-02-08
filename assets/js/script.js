@@ -7,48 +7,100 @@ let addButton = document.getElementById("button");
 
 addButton.addEventListener("click", addToList);
 
+//checked class when a li is clicked
+ulEl.addEventListener("click", function (ev) {
+    if (ev.target.tagName === "li") {
+        ev.target.classList.toggle("checked");
+    }
+});
 
 function addToList() {
 
+    let newTask = inputList.value.trim();
 
-    if (inputList.value === "") {
+    if (newTask === "") {
         alert("Please write down your task!");
+        return;
     }
-    else {
-        let newTask = inputList.value.trim();
-        let li = document.createElement("li");
-        li.innerHTML = newTask;
 
-        ulEl.appendChild(li);
+    let duplicate = false;
+    ulEl.querySelectorAll("li").forEach(li => {
+        if (li.firstChild.textContent === newTask) {
+            duplicate = true;
+        }
+    });
 
+    if (duplicate) {
+        alert("This task is already in your list!");
+        return;
     }
-    inputList.value = "";
 
-    document.getElementById("list-container").style.display = "block";
+    let listItems = document.createElement("li");
+    // Create checkbox
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "task-checkbox";
+
+    // When checkbox is clicked, toggle completed style
+    checkbox.addEventListener("change", function () {
+        if (this.checked) {
+            taskSpan.classList.add("checked");
+        } else {
+            taskSpan.classList.remove("checked");
+        }
+    });
+
+    // Create task text span
+    let taskSpan = document.createElement("span");
+    taskSpan.className = "task-text";
+    taskSpan.textContent = newTask;
 
 
-    let li = document.getElementsByTagName("li");
-    let span = document.createElement("span");
-    let txt = document.createTextNode("X");
-    txt.className = "X";
-    li[i].appendChild(span);
-    span.appendChild(txt);
-
-
-    let close = document.getElementsByClassName("close");
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
+    let closeBtn = document.createElement("span");
+    closeBtn.className = "close";
+    closeBtn.textContent = "x";
+    closeBtn.onclick = function () {
+        this.parentElement.remove();
+        // Hide container if empty
+        if (ulEl.children.length === 0) {
+            document.getElementById("list-container").style.display = "none";
         }
     }
+    listItems.appendChild(checkbox);
+    listItems.appendChild(taskSpan);
+    listItems.appendChild(closeBtn);
+    ulEl.appendChild(listItems);
+
+    //show list container
+    document.getElementById("list-container").style.display = "block";
+
+    //clear the input
+    inputList.value = "";
+
 
 }
-ulEl.addEventListener("click", function (ev) {
-    if (ev.target.tagName === li) {
-        ev.target.classList.toggle("checked");
-    }
-}, false);
+
+
+// let closeEl = document.getElementsByClassName("close");
+// for (i = 0; i < closeEl.length; i++) {
+//     closeEl[i].onclick = function () {
+//         var div = this.parentElement;
+//         div.style.display = "none";
+//     }
+// }
+
+
+// let span = document.createElement("span");
+// let txt = document.createTextNode("x");
+// span.className = "close";
+// span.appendChild(txt);
+// listItems[i].appendChild(span);
+
+// ulEl.addEventListener("click", function (ev) {
+//     if (ev.target.tagName === newLi) {
+//         ev.target.classList.toggle("checked");
+//     }
+// }, false);
 
 // // Create a "close" button and append it to each list item
 // let li = document.getElementsByTagName("li");
