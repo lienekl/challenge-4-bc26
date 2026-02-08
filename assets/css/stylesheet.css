@@ -107,22 +107,7 @@ input::placeholder {
     margin: 20px auto;
 }
 
-/* ul li span {
-    position: absolute;
-    right: 0;
-    top: 5px; 
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    color: #5D6532;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50px;
-}
-ul li span:hover {
-    background-color: #999999;
-}  */
-
+/*
 .delete-btn {
   position: absolute;
   right: 0;
@@ -135,23 +120,23 @@ ul li span:hover {
     color: darkred;
     background-color: #999999;
 }
+ 
 
-/* Darker background-color on hover */
 ul li:hover {
-  background: #ddd;
+  background: #dddddd;
 }
 
-/* When clicked on, strike out text */
+
 ul li.checked {
-  color: #fff;
+  color: #ffffff;
   text-decoration: line-through;
 }
 
-/* Add a "checked" mark when clicked on */
+
 ul li.checked::before {
   content: '';
   position: absolute;
-  border-color: #fff;
+  border-color: #ffffff;
   border-style: solid;
   border-width: 0 2px 2px 0;
   top: 10px;
@@ -159,4 +144,15 @@ ul li.checked::before {
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
+} 
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eeeeee;
+  font-size: 18px;
+  transition: 0.2s;
 }
+  */
