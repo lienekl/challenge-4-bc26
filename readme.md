@@ -6,19 +6,19 @@ The goal of the challenge was to build an interactive TODO list application that
 
 ## Key features
 
-'*' Users can add new TODO tasks to the list
+* Users can add new TODO tasks to the list
 
-'*' New tasks are displayed dynamically on the page without reloading
+* New tasks are displayed dynamically on the page without reloading
 
-'*' Input validation is implemented:
+* Input validation is implemented:
 
-    '*' If the input field is empty, an alert notifies the user:
+    * If the input field is empty, an alert notifies the user:
         “Please write down your task!”
 
-    '*' If the task already exists in the list, a prompt notifies the user:
+    * If the task already exists in the list, a prompt notifies the user:
         “This task is already in your list!”
 
-'*' A Delete function allows users to remove tasks once they are completed
+* A Delete function allows users to remove tasks once they are completed
 
 
 # Links
