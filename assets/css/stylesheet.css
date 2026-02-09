@@ -93,55 +93,21 @@ input::placeholder {
 #list {
     display: inline-block;
     margin: auto;
+    line-height: 1.5;
 }
 
-
 #list-container {
-    display: none;
+    display: block;
     max-width: 600px;
     border: none;
     margin: 20px auto;
 }
 
-ul li:hover {
-    background: #e6e5e4;
-}
-
-ul li.checked {
-    color: #000000;
-    text-decoration: line-through;
-}
-
-ul li.checked::before {
-    content: " ";
-    position: absolute;
-    color: #000000;
-    border-color: #000000;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-}
-
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #e6e5e4;
-    font-size: 18px;
-    transition: 0.2s;
-}
 
 .close {
-    position: absolute;
-    /* right: 0;
-    top: 0; */
     text-align: right;
-    padding: 10px;
+    margin-left: 50px;
+    padding: 5px;
     color: #000000;
     font-size: 16px;
 }
@@ -151,19 +117,3 @@ ul li {
     color: white;
 }
 
-
- /* .completed {
-  text-decoration: line-through;
-  color: gray;
-  border: 1px solid gray;
-}
-.edit-btn, .delete-btn {
-  color: #3E593B;
-  cursor: pointer;
-  margin: 3px 5px;
-  border: none;
-  padding: 3px 5px;
-  background: none;
-  text-align: right;
-  text-decoration: underline;
-}  */
