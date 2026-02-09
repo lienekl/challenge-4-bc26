@@ -6,7 +6,7 @@ The goal of the challenge was to build an interactive TODO list application that
 
 ## Key features
 
-* Users can add new TODO tasks to the list
+* Users can add new to-do tasks by clicking “Add to the List” or pressing Enter.
 
 * New tasks are displayed dynamically on the page without reloading
 
